@@ -15,7 +15,7 @@ if __name__== "__main__":
     url = sys.argv[1]
     json_file = app(url)
 
-    json_dump = json.dumps(str(json_file))
+    json_dump = str(json_file)
     
     print(json_dump)
 

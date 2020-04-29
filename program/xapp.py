@@ -8,6 +8,8 @@ import base64
 import torchvision.transforms as transforms
 from image_processing import im_process
 
+import io
+
 def app(url):
     #    file_name = "test_images/123.dcm" # input file
     return_json = {}          # output dictionary that we should convert to json
@@ -51,14 +53,12 @@ def app(url):
     
     #plt.imshow(heatmap_image)
 
-    import io
-
     imgByteArr = io.BytesIO()
     heatmap_image.save(imgByteArr, format='PNG')
     imgByteArr = imgByteArr.getvalue()
 
     b64string = base64.b64encode(imgByteArr)
-    
+
     return_json['image'] = b64string #np.array(heatmap_image).tolist()
     
     
