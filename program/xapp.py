@@ -58,8 +58,9 @@ def app(url):
     imgByteArr = imgByteArr.getvalue()
 
     b64string = base64.b64encode(imgByteArr)
+    img_json = b64string.decode('utf8').replace("'", '"')
 
-    return_json['image'] = b64string #np.array(heatmap_image).tolist()
+    return_json['image'] = img_json #np.array(heatmap_image).tolist()
     
     
     return (return_json)
