@@ -56,7 +56,9 @@ ENV NVIDIA_REQUIRE_CUDA "cuda>=10.2 brand=tesla,driver>=384,driver<385 brand=tes
 # END => gpu libs
 
 
-
+# expose 80 port of the container
 EXPOSE 80
+
+# run python built in server 
 ENTRYPOINT ["python3", "app.py"]
 
